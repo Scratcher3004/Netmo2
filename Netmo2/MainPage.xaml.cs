@@ -13,8 +13,8 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Netmo2.Util;
-
-// Die Elementvorlage "Leere Seite" wird unter https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x407 dokumentiert.
+using System.Threading.Tasks;
+using Netmo2.Notifaction;
 
 namespace Netmo2
 {
@@ -23,25 +23,55 @@ namespace Netmo2
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        // TODO: Remove and add Login Interface
-        private string ClientID = "5c18ff3c6b0affcc188bbe4a";
-        private string ClientSecret = "SjHyLVQnhaougeMNW9ahihewPGjbEiCl2zS";
-        private string Password = "KuRsE2018!";
-        private string Username = "peter.steinkamp@googlemail.com";
-        private string DeviceID = "70:ee:50:36:f0:2a";
+        public NetmoSettings settings = new NetmoSettings()
+        {
+            // TODO: Remove and add Login Interface
+            ClientID = "5c18ff3c6b0affcc188bbe4a",
+            ClientSecret = "SjHyLVQnhaougeMNW9ahihewPGjbEiCl2zS",
+            Password = "KuRsE2018!",
+            Username = "peter.steinkamp@googlemail.com",
+            DeviceID = "70:ee:50:36:f0:2a"
+        };
 
         private Connector connector;
         private NetAtmoResponse resp;
+        private ContentChanger changer;
+
+        public static MainPage page;
 
         public MainPage()
         {
             this.InitializeComponent();
 
-            connector = new Connector(ClientID, ClientSecret, Username, Password, DeviceID);
+            page = this;
+            connector = new Connector(settings.ClientID, settings.ClientSecret, settings.Username, settings.Password, settings.DeviceID);
             resp = connector.GetNetatmoWeatherData();
+            changer = new ContentChanger(this);
 
-            // TODO: Add display and remove Placeholder for Temperature
+            // TODO: Add display and remove Placeholders for Temperature and switches
             storedtemp.Text = "TestText Temperature = " + resp.Body.Devices[0].DashboardData.Temperature;
         }
+
+        public NetAtmoResponse GetCurrent()
+        {
+            return resp;
+        }
+
+        public void UpdateData()
+        {
+            resp = connector.GetNetatmoWeatherData();
+
+            // TODO: Add display and remove Placeholders for Temperature and switches
+            storedtemp.Text = "TestText Temperature = " + resp.Body.Devices[0].DashboardData.Temperature;
+        }
+    }
+
+    public class NetmoSettings
+    {
+        public string ClientID = "";
+        public string ClientSecret = "";
+        public string Password = "";
+        public string Username = "";
+        public string DeviceID = "";
     }
 }

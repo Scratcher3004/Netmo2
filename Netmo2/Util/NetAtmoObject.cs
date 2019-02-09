@@ -14,6 +14,7 @@ namespace Netmo2.Util
     using System.Globalization;
     using JsonDeserialize;
 
+
     public partial class NetAtmoResponse : SerializeableJsonObject
     {
         //[JsonProperty("body")]

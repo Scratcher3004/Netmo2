@@ -1,13 +1,13 @@
-﻿<Page
+﻿<Page xmlns:my="using:Windows.UI.Xaml.Controls.Maps" 
     x:Class="Netmo2.MainPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:Netmo2rep"
+    xmlns:local="using:Netmo2"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <TextBlock HorizontalAlignment="Left" Margin="190,264,0,0" Text="TextBlock" TextWrapping="Wrap" VerticalAlignment="Top" Height="54" Width="321" x:Name="storedtemp"> TestText Temperature = </TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="190,264,0,0" Text="TextBlock" TextWrapping="Wrap" VerticalAlignment="Top" Height="54" Width="321" x:Name="storedtemp"> TestText Temperature =</TextBlock>
     </Grid>
 </Page>

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <SmallTileSource>C:\Users\fried\Documents\Visual Studio 2017\Projects\Netmo2\Netmo2\Netmo2\Assets\00- NETMO-ICON.png</SmallTileSource>
+    <MediumTileSource>C:\Users\fried\Documents\Visual Studio 2017\Projects\Netmo2\Netmo2\Netmo2\Assets\00- NETMO-ICON.png</MediumTileSource>
+    <AppIconSource>C:\Users\fried\Documents\Visual Studio 2017\Projects\Netmo2\Netmo2\Netmo2\Assets\00- NETMO-ICON.png</AppIconSource>
+    <SplashScreenSource>C:\Users\fried\Documents\Visual Studio 2017\Projects\Netmo2\Netmo2\Netmo2\Assets\SplashScreen.scale-200.png</SplashScreenSource>
+    <LargeTileSource>C:\Users\fried\Documents\Visual Studio 2017\Projects\Netmo2\Netmo2\Netmo2\Assets\00- NETMO-ICON.png</LargeTileSource>
+    <WideTileSource>C:\Users\fried\Documents\Visual Studio 2017\Projects\Netmo2\Netmo2\Netmo2\Assets\00- NETMO-ICON.png</WideTileSource>
+    <PackageLogoSource>C:\Users\fried\Documents\Visual Studio 2017\Projects\Netmo2\Netmo2\Netmo2\Assets\00- NETMO-ICON.png</PackageLogoSource>
+    <BadgeLogoSource>C:\Users\fried\Documents\Visual Studio 2017\Projects\Netmo2\Netmo2\Netmo2\Assets\00- NETMO-ICON.png</BadgeLogoSource>
+  </PropertyGroup>
+</Project>

@@ -1,1 +1,1 @@
-c:\users\anwender\source\repos\Netmo2rep\Netmo2rep\Netmo2.csproj;x64
+C:\Users\fried\Documents\Visual Studio 2017\Projects\Netmo2\Netmo2\Netmo2\Netmo2.csproj;x64
