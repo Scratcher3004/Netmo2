@@ -110,6 +110,8 @@
     <None Include="Netmo2_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\SplashScreen.scale-200 - Kopieren.png" />
+    <Content Include="Assets\SplashScreen.scale-200.png" />
     <Content Include="Assets\Images\042-cold.png" />
     <Content Include="Assets\Images\043-warm.png" />
     <Content Include="Assets\Images\044-warm-1.png" />
@@ -118,7 +120,6 @@
     <Content Include="JsonDeserialize.dll" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
-    <Content Include="Assets\SplashScreen.scale-200.png" />
     <Content Include="Assets\Square150x150Logo.scale-200.png" />
     <Content Include="Assets\Square44x44Logo.scale-200.png" />
     <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />

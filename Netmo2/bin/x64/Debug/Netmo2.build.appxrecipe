@@ -373,6 +373,13 @@
     <AppxPackagedFile Include="C:\Users\fried\Documents\Visual Studio 2017\Projects\Netmo2\Netmo2\Netmo2\JsonDeserialize.dll">
       <PackagePath>JsonDeserialize.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\fried\Documents\Visual Studio 2017\Projects\Netmo2\Netmo2\Netmo2\Assets\SplashScreen.scale-200 - Kopieren.png">
+      <PackagePath>Assets\SplashScreen.scale-200 - Kopieren.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\fried\Documents\Visual Studio 2017\Projects\Netmo2\Netmo2\Netmo2\Assets\SplashScreen.scale-200.png">
+      <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\fried\Documents\Visual Studio 2017\Projects\Netmo2\Netmo2\Netmo2\Assets\Images\042-cold.png">
       <PackagePath>Assets\Images\042-cold.png</PackagePath>
     </AppxPackagedFile>
@@ -390,10 +397,6 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\fried\Documents\Visual Studio 2017\Projects\Netmo2\Netmo2\Netmo2\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\fried\Documents\Visual Studio 2017\Projects\Netmo2\Netmo2\Netmo2\Assets\SplashScreen.scale-200.png">
-      <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
-      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\fried\Documents\Visual Studio 2017\Projects\Netmo2\Netmo2\Netmo2\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>

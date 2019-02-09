@@ -31,13 +31,13 @@
     <AppXManifest Include="C:\Users\fried\Documents\Visual Studio 2017\Projects\Netmo2\Netmo2\Netmo2\bin\x64\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2019-02-09T05:44:10.934</Modified>
+      <Modified>2019-02-09T07:34:42.910</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\fried\Documents\Visual Studio 2017\Projects\Netmo2\Netmo2\Netmo2\bin\x64\Debug\Netmo2.exe">
       <PackagePath>entrypoint\Netmo2.exe</PackagePath>
-      <Modified>2019-02-09T05:44:07.961</Modified>
+      <Modified>2019-02-09T06:37:02.317</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\fried\.nuget\packages\microsoft.csharp\4.0.1\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -499,6 +499,15 @@
       <PackagePath>JsonDeserialize.dll</PackagePath>
       <Modified>2019-02-09T05:29:33.039</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\fried\Documents\Visual Studio 2017\Projects\Netmo2\Netmo2\Netmo2\Assets\SplashScreen.scale-200 - Kopieren.png">
+      <PackagePath>Assets\SplashScreen.scale-200 - Kopieren.png</PackagePath>
+      <Modified>2019-02-09T06:36:44.945</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\fried\Documents\Visual Studio 2017\Projects\Netmo2\Netmo2\Netmo2\Assets\SplashScreen.scale-200.png">
+      <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2019-02-09T07:34:34.294</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\fried\Documents\Visual Studio 2017\Projects\Netmo2\Netmo2\Netmo2\Assets\Images\042-cold.png">
       <PackagePath>Assets\Images\042-cold.png</PackagePath>
       <Modified>2019-02-09T05:33:09.911</Modified>
@@ -521,11 +530,6 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\fried\Documents\Visual Studio 2017\Projects\Netmo2\Netmo2\Netmo2\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
-      <Modified>2017-12-05T18:42:03.244</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\fried\Documents\Visual Studio 2017\Projects\Netmo2\Netmo2\Netmo2\Assets\SplashScreen.scale-200.png">
-      <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
-      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2017-12-05T18:42:03.244</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\fried\Documents\Visual Studio 2017\Projects\Netmo2\Netmo2\Netmo2\Assets\Square150x150Logo.scale-200.png">
@@ -568,11 +572,11 @@
     <AppxPackagedFile Include="C:\Users\fried\Documents\Visual Studio 2017\Projects\Netmo2\Netmo2\Netmo2\bin\x64\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2019-02-09T05:44:10.307</Modified>
+      <Modified>2019-02-09T06:37:03.130</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\fried\Documents\Visual Studio 2017\Projects\Netmo2\Netmo2\Netmo2\bin\x64\Debug\Core\Netmo2.exe">
       <PackagePath>Netmo2.exe</PackagePath>
-      <Modified>2019-02-09T05:44:10.920</Modified>
+      <Modified>2019-02-09T07:34:42.910</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
