@@ -7,24 +7,24 @@
 
     Weitere Informationen zu Paketmanifestdateien finden Sie unter http://go.microsoft.com/fwlink/?LinkID=241727
   -->
-  <Identity Name="6c700e50-33fe-48c7-8bd8-0e287a1945ad" Publisher="CN=fried" Version="1.0.0.0" ProcessorArchitecture="x64" />
-  <mp:PhoneIdentity PhoneProductId="6c700e50-33fe-48c7-8bd8-0e287a1945ad" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
+  <Identity Name="8da9d667-6d2a-47a9-9f20-19cbdb3c67e7" Publisher="CN=Anwender" Version="1.0.0.0" ProcessorArchitecture="x64" />
+  <mp:PhoneIdentity PhoneProductId="8da9d667-6d2a-47a9-9f20-19cbdb3c67e7" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
-    <DisplayName>Netmo2</DisplayName>
-    <PublisherDisplayName>fried</PublisherDisplayName>
+    <DisplayName>Netmo2rep</DisplayName>
+    <PublisherDisplayName>Anwender</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
   <Dependencies>
     <TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.10586.0" MaxVersionTested="10.0.16299.0" />
-    <PackageDependency Name="Microsoft.NET.CoreRuntime.1.1" MinVersion="1.1.25305.1" Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US" />
-    <PackageDependency Name="Microsoft.VCLibs.140.00.Debug" MinVersion="14.0.25830.2" Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US" />
+    <PackageDependency Name="Microsoft.NET.CoreRuntime.1.1" MinVersion="1.1.25915.0" Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US" />
+    <PackageDependency Name="Microsoft.VCLibs.140.00.Debug" MinVersion="14.0.26128.0" Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US" />
   </Dependencies>
   <Resources>
     <Resource Language="DE-DE" />
   </Resources>
   <Applications>
-    <Application Id="App" Executable="Netmo2.exe" EntryPoint="Netmo2.App">
-      <uap:VisualElements DisplayName="Netmo2" Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" Description="Netmo2" BackgroundColor="transparent">
+    <Application Id="App" Executable="Netmo2rep.exe" EntryPoint="Netmo2rep.App">
+      <uap:VisualElements DisplayName="Netmo2rep" Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" Description="Netmo2rep" BackgroundColor="transparent">
         <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png" />
         <uap:SplashScreen Image="Assets\SplashScreen.png" />
       </uap:VisualElements>
@@ -37,12 +37,12 @@
     <build:Item Name="TargetFrameworkMoniker" Value=".NETCore,Version=v5.0" />
     <build:Item Name="VisualStudio" Version="15.0" />
     <build:Item Name="VisualStudioEdition" Value="Microsoft Visual Studio Community 2017" />
-    <build:Item Name="OperatingSystem" Version="10.0.17134.582 (WinBuild.160101.0800)" />
-    <build:Item Name="Microsoft.Build.AppxPackage.dll" Version="15.0.27128.1" />
-    <build:Item Name="ProjectGUID" Value="{34FE1C9A-7B84-4E54-91A2-5579E3F25FCF}" />
+    <build:Item Name="OperatingSystem" Version="10.0.17763.289 (WinBuild.160101.0800)" />
+    <build:Item Name="Microsoft.Build.AppxPackage.dll" Version="15.0.27428.2005" />
+    <build:Item Name="ProjectGUID" Value="{E8102784-EA43-41E0-A74D-282A47DC5FDB}" />
     <build:Item Name="OptimizingToolset" Value="None" />
     <build:Item Name="TargetRuntime" Value="Managed" />
-    <build:Item Name="Microsoft.Windows.UI.Xaml.Build.Tasks.dll" Version="15.0.27128.1" />
+    <build:Item Name="Microsoft.Windows.UI.Xaml.Build.Tasks.dll" Version="15.0.27428.2005" />
     <build:Item Name="MakePri.exe" Version="10.0.16299.15 (WinBuild.160101.0800)" />
   </build:Metadata>
 </Package>
