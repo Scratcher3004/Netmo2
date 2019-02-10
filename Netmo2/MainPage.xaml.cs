@@ -23,6 +23,8 @@ namespace Netmo2
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        private DateTime netmoDataExpiresIn;
+
         public NetmoSettings settings = new NetmoSettings()
         {
             // TODO: Remove and add Login Interface
@@ -43,12 +45,22 @@ namespace Netmo2
         {
             this.InitializeComponent();
 
+            try
+            {
+                settings = LocalDataManager.GetNetmoSettings();
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+
             page = this;
             connector = new Connector(settings.ClientID, settings.ClientSecret, settings.Username, settings.Password, settings.DeviceID);
             resp = connector.GetNetatmoWeatherData();
+            netmoDataExpiresIn = DateTime.Now.AddMinutes(5);
             changer = new ContentChanger(this);
 
-            // TODO: Add display and remove Placeholders for Temperature and switches
+            // TODO: Add display and remove Placeholders for Temperature
             storedtemp.Text = "TestText Temperature = " + resp.Body.Devices[0].DashboardData.Temperature;
         }
 
@@ -59,9 +71,17 @@ namespace Netmo2
 
         public void UpdateData()
         {
-            resp = connector.GetNetatmoWeatherData();
+            if (netmoDataExpiresIn < DateTime.Now)
+            {
+                resp = connector.GetNetatmoWeatherData();
+                netmoDataExpiresIn = DateTime.Now.AddMinutes(5);
+            }
+            else
+            {
+                return;
+            }
 
-            // TODO: Add display and remove Placeholders for Temperature and switches
+            // TODO: Add display and remove Placeholders for Temperature
             storedtemp.Text = "TestText Temperature = " + resp.Body.Devices[0].DashboardData.Temperature;
         }
     }
@@ -73,5 +93,17 @@ namespace Netmo2
         public string Password = "";
         public string Username = "";
         public string DeviceID = "";
+
+        public List<KeyValuePair<string, string>> GetSettings()
+        {
+            return new List<KeyValuePair<string, string>>
+            {
+                new KeyValuePair<string, string>("client_id", ClientID),
+                new KeyValuePair<string, string>("client_secret", ClientSecret),
+                new KeyValuePair<string, string>("devId", DeviceID),
+                new KeyValuePair<string, string>("username", Username),
+                new KeyValuePair<string, string>("password", Password)
+            };
+        }
     }
 }

@@ -18,7 +18,6 @@ namespace Netmo2.Notifaction
         private DispatcherTimer timer;
         private MainPage resources;
         private int current = 0;
-        private int curr2 = 0;
 
         /// <summary>
         /// 
@@ -66,10 +65,7 @@ namespace Netmo2.Notifaction
         private void Do(object sender, object e)
         {
             string content = "";
-            if (curr2 != 0 && curr2 % 20 == 0)
-            {
-                MainPage.page.UpdateData();
-            }
+            MainPage.page.UpdateData();
             Device device = MainPage.page.GetCurrent().Body.Devices[0];
             DeviceDashboardData data = device.DashboardData;
 
@@ -100,13 +96,26 @@ namespace Netmo2.Notifaction
             }
 
             var tileXml = TileUpdateManager.GetTemplateContent(TileTemplateType.TileSquare150x150Text04);
+            //var tileXml2 = TileUpdateManager.GetTemplateContent(TileTemplateType.TileWide310x150Text04);
+            //var tileXml3 = TileUpdateManager.GetTemplateContent(TileTemplateType.TileSquare150x150Text04);
+
             var tileAttributes = tileXml.GetElementsByTagName("text");
             tileAttributes[0].AppendChild(tileXml.CreateTextNode(content));
             var tileNotification = new TileNotification(tileXml);
+
+            //var tileAttributes2 = tileXml2.GetElementsByTagName("text");
+            //tileAttributes2[0].AppendChild(tileXml2.CreateTextNode(content));
+            //var tileNotification2 = new TileNotification(tileXml2);
+
+            //var tileAttributes3 = tileXml3.GetElementsByTagName("text");
+            //tileAttributes3[0].AppendChild(tileXml3.CreateTextNode(content));
+            //var tileNotification3 = new TileNotification(tileXml3);
+
             TileUpdateManager.CreateTileUpdaterForApplication().Update(tileNotification);
+            //TileUpdateManager.CreateTileUpdaterForApplication().Update(tileNotification2);
+            //TileUpdateManager.CreateTileUpdaterForApplication().Update(tileNotification3);
 
             current++;
-            curr2++;
 
             if (current > 4)
             {
