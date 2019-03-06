@@ -15,6 +15,7 @@ using Windows.UI.Xaml.Navigation;
 using Netmo2.Util;
 using System.Threading.Tasks;
 using Netmo2.Notifaction;
+using Netmo2.Columns;
 
 namespace Netmo2
 {
@@ -59,6 +60,7 @@ namespace Netmo2
             resp = connector.GetNetatmoWeatherData();
             netmoDataExpiresIn = DateTime.Now.AddMinutes(5);
             changer = new ContentChanger(this);
+            NotificationSender.SendTestNotification();
 
             // TODO: Add display and remove Placeholders for Temperature
             storedtemp.Text = "TestText Temperature = " + resp.Body.Devices[0].DashboardData.Temperature;

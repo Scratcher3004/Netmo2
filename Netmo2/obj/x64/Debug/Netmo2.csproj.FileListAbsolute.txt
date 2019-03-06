@@ -341,7 +341,6 @@ C:\Users\fried\Documents\Visual Studio 2017\Projects\Netmo2\Netmo2\Netmo2\bin\x6
 C:\Users\fried\Documents\Visual Studio 2017\Projects\Netmo2\Netmo2\Netmo2\bin\x64\Debug\System.Xml.XmlDocument.dll
 C:\Users\fried\Documents\Visual Studio 2017\Projects\Netmo2\Netmo2\Netmo2\bin\x64\Debug\System.Xml.XmlSerializer.dll
 C:\Users\fried\Documents\Visual Studio 2017\Projects\Netmo2\Netmo2\Netmo2\bin\x64\Debug\JsonDeserialize.dll
-C:\Users\fried\Documents\Visual Studio 2017\Projects\Netmo2\Netmo2\Netmo2\obj\x64\Debug\Netmo2.csprojResolveAssemblyReference.cache
 C:\Users\fried\Documents\Visual Studio 2017\Projects\Netmo2\Netmo2\Netmo2\obj\x64\Debug\App.g.i.cs
 C:\Users\fried\Documents\Visual Studio 2017\Projects\Netmo2\Netmo2\Netmo2\obj\x64\Debug\App.g.cs
 C:\Users\fried\Documents\Visual Studio 2017\Projects\Netmo2\Netmo2\Netmo2\obj\x64\Debug\MainPage.g.i.cs
@@ -421,8 +420,6 @@ C:\Users\fried\Documents\Visual Studio 2017\Projects\Netmo2\Netmo2\Netmo2\obj\x6
 C:\Users\fried\Documents\Visual Studio 2017\Projects\Netmo2\Netmo2\Netmo2\obj\x64\Debug\Netmo2.csproj.GenerateResource.Cache
 C:\Users\fried\Documents\Visual Studio 2017\Projects\Netmo2\Netmo2\Netmo2\obj\x64\Debug\priconfig.xml
 C:\Users\fried\Documents\Visual Studio 2017\Projects\Netmo2\Netmo2\Netmo2\obj\x64\Debug\priconfig.xml.intermediate
-C:\Users\fried\Documents\Visual Studio 2017\Projects\Netmo2\Netmo2\Netmo2\obj\x64\Debug\layout.resfiles
-C:\Users\fried\Documents\Visual Studio 2017\Projects\Netmo2\Netmo2\Netmo2\obj\x64\Debug\layout.resfiles.intermediate
 C:\Users\fried\Documents\Visual Studio 2017\Projects\Netmo2\Netmo2\Netmo2\obj\x64\Debug\resources.resfiles
 C:\Users\fried\Documents\Visual Studio 2017\Projects\Netmo2\Netmo2\Netmo2\obj\x64\Debug\resources.resfiles.intermediate
 C:\Users\fried\Documents\Visual Studio 2017\Projects\Netmo2\Netmo2\Netmo2\obj\x64\Debug\pri.resfiles
@@ -436,3 +433,13 @@ C:\Users\fried\Documents\Visual Studio 2017\Projects\Netmo2\Netmo2\Netmo2\obj\x6
 C:\Users\fried\Documents\Visual Studio 2017\Projects\Netmo2\Netmo2\Netmo2\bin\x64\Debug\Microsoft.Toolkit.Uwp.Notifications.dll
 C:\Users\fried\Documents\Visual Studio 2017\Projects\Netmo2\Netmo2\Netmo2\bin\x64\Debug\Microsoft.Toolkit.Uwp.Notifications.pdb
 C:\Users\fried\Documents\Visual Studio 2017\Projects\Netmo2\Netmo2\Netmo2\obj\x64\Debug\Microsoft.Toolkit.Uwp.Notifications.pri.xml
+C:\Users\fried\Documents\Visual Studio 2017\Projects\Netmo2\Netmo2\Netmo2\obj\x64\Debug\Netmo2.csprojAssemblyReference.cache
+C:\Users\fried\Documents\Visual Studio 2017\Projects\Netmo2\Netmo2\Netmo2\obj\x64\Debug\Netmo2.csproj.CopyComplete
+C:\Users\fried\Documents\Visual Studio 2017\Projects\Netmo2\Netmo2\Netmo2\obj\x64\Debug\unfiltered.layout.resfiles
+C:\Users\fried\Documents\Visual Studio 2017\Projects\Netmo2\Netmo2\Netmo2\obj\x64\Debug\unfiltered.layout.resfiles.intermediate
+C:\Users\fried\Documents\Visual Studio 2017\Projects\Netmo2\Netmo2\Netmo2\obj\x64\Debug\filtered.layout.resfiles
+C:\Users\fried\Documents\Visual Studio 2017\Projects\Netmo2\Netmo2\Netmo2\obj\x64\Debug\filtered.layout.resfiles.intermediate
+C:\Users\fried\Documents\Visual Studio 2017\Projects\Netmo2\Netmo2\Netmo2\obj\x64\Debug\excluded.layout.resfiles
+C:\Users\fried\Documents\Visual Studio 2017\Projects\Netmo2\Netmo2\Netmo2\obj\x64\Debug\excluded.layout.resfiles.intermediate
+C:\Users\fried\Documents\Visual Studio 2017\Projects\Netmo2\Netmo2\Netmo2\bin\x64\Debug\QueryString.NETCore.dll
+C:\Users\fried\Documents\Visual Studio 2017\Projects\Netmo2\Netmo2\Netmo2\bin\x64\Debug\QueryString.NETCore.pdb

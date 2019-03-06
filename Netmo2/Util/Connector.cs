@@ -10,14 +10,14 @@ namespace Netmo2.Util
 {
     class Connector
     {
-        private string deviceID;
+        private string DeviceID { get; set; } =  "";
         private Token CurrentToken;
-        private List<KeyValuePair<string, string>> nvc;
+        private List<KeyValuePair<string, string>> Nvc { get; set; } = null;
 
-        public Connector(string _clientid, string _clientsecret, string _username, string _password, string _deviceID)
+        public void Update(string _clientid, string _clientsecret, string _username, string _password, string _deviceID)
         {
-            deviceID = _deviceID;
-            nvc = new List<KeyValuePair<string, string>>
+            DeviceID = _deviceID;
+            Nvc = new List<KeyValuePair<string, string>>
             {
                 new KeyValuePair<string, string>("client_id", _clientid),
                 new KeyValuePair<string, string>("client_secret", _clientsecret),
@@ -30,7 +30,34 @@ namespace Netmo2.Util
             {
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-                HttpResponseMessage response = client.PostAsync("https://api.netatmo.com/oauth2/token", new FormUrlEncodedContent(nvc)).Result;
+                HttpResponseMessage response = client.PostAsync("https://api.netatmo.com/oauth2/token", new FormUrlEncodedContent(Nvc)).Result;
+                if (!response.IsSuccessStatusCode)
+                {
+                    CurrentToken = null;
+                    throw new Exception("Ein Fehler ist aufgetreten, der Token konnte nicht abgerufen werden." + response.StatusCode);
+                }
+                var strtoken = response.Content.ReadAsStringAsync().Result;
+                CurrentToken = (Token)JsonDeserializer.TryDeserialze(strtoken, new Token());
+            }
+        }
+
+        public Connector(string _clientid, string _clientsecret, string _username, string _password, string _deviceID)
+        {
+            DeviceID = _deviceID;
+            Nvc = new List<KeyValuePair<string, string>>
+            {
+                new KeyValuePair<string, string>("client_id", _clientid),
+                new KeyValuePair<string, string>("client_secret", _clientsecret),
+                new KeyValuePair<string, string>("grant_type", "password"),
+                new KeyValuePair<string, string>("username", _username),
+                new KeyValuePair<string, string>("password", _password)
+            };
+
+            using (HttpClient client = new HttpClient())
+            {
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                HttpResponseMessage response = client.PostAsync("https://api.netatmo.com/oauth2/token", new FormUrlEncodedContent(Nvc)).Result;
                 if (!response.IsSuccessStatusCode)
                 {
                     CurrentToken = null;
@@ -49,7 +76,7 @@ namespace Netmo2.Util
                 var kvp = new List<KeyValuePair<string, string>>
                 {
                     new KeyValuePair<string, string>("access_token", CurrentToken.access_token),
-                    new KeyValuePair<string, string>("device_id", deviceID) //70:ee:50:36:f0:2a
+                    new KeyValuePair<string, string>("device_id", DeviceID) //70:ee:50:36:f0:2a
                 };
                 var response2 = client.PostAsync("https://api.netatmo.com/api/getstationsdata", new FormUrlEncodedContent(kvp));
                 var datastr = response2.Result.Content.ReadAsStringAsync().Result;
@@ -69,7 +96,7 @@ namespace Netmo2.Util
             {
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-                HttpResponseMessage response = client.PostAsync("https://api.netatmo.com/oauth2/token", new FormUrlEncodedContent(nvc)).Result;
+                HttpResponseMessage response = client.PostAsync("https://api.netatmo.com/oauth2/token", new FormUrlEncodedContent(Nvc)).Result;
                 if (!response.IsSuccessStatusCode)
                 {
                     CurrentToken = null;
@@ -88,7 +115,7 @@ namespace Netmo2.Util
                 var kvp = new List<KeyValuePair<string, string>>
                 {
                     new KeyValuePair<string, string>("access_token", CurrentToken.access_token),
-                    new KeyValuePair<string, string>("device_id", deviceID) //70:ee:50:36:f0:2a
+                    new KeyValuePair<string, string>("device_id", DeviceID) //70:ee:50:36:f0:2a
                 };
                 var response2 = await client.PostAsync("https://api.netatmo.com/api/getstationsdata", new FormUrlEncodedContent(kvp));
                 var datastr = response2.Content.ReadAsStringAsync().Result;

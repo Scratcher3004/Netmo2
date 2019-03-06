@@ -7,8 +7,11 @@ using Windows.UI.Xaml;
 using Microsoft.Toolkit.Uwp.Notifications;
 using Netmo2.Util;
 using Windows.UI.Notifications;
+using Netmo2.Init;
+using Netmo2.Notifaction;
+using JsonDeserialize;
 
-namespace Netmo2.Notifaction
+namespace Netmo2.Columns
 {
     /// <summary>
     /// Changes the Content every half minute
@@ -16,8 +19,11 @@ namespace Netmo2.Notifaction
     public class ContentChanger
     {
         private DispatcherTimer timer;
-        private MainPage resources;
+        private MainPage Resources { get; set; } = null;
         private int current = 0;
+
+        public static AnnouncementCollection DeviceAnnouncements = new DefaultDeviceAnnouncementResource().ConvertTo();
+        public static AnnouncementCollection ModuleAnnouncements = new DefaultModuleAnnouncementResource().ConvertTo();
 
         /// <summary>
         /// 
@@ -25,7 +31,7 @@ namespace Netmo2.Notifaction
         /// <param name="page"></param>
         public ContentChanger(MainPage page)
         {
-            resources = page;
+            Resources = page;
 
             timer = new DispatcherTimer
             {
@@ -52,7 +58,7 @@ namespace Netmo2.Notifaction
         /// <param name="interval">The interval in seconds of Update rate.</param>
         public ContentChanger(MainPage page, int interval)
         {
-            resources = page;
+            Resources = page;
 
             timer = new DispatcherTimer
             {
@@ -120,6 +126,33 @@ namespace Netmo2.Notifaction
             if (current > 4)
             {
                 current = 0;
+            }
+
+            if (MainPage.page.GetCurrent() == null)
+                return;
+
+            foreach (var item in DeviceAnnouncements.Announcements)
+            {
+                if (item.IsTriggered(MainPage.page.GetCurrent().Body.Devices[0]))
+                {
+                    SerializeableJsonObject newObject = Serialization.Serialize(MainPage.page.GetCurrent().Body.Devices[0], item.Id, out string endOfPath);
+                    NotificationSender.SendWarnNotification(endOfPath, item.Dir, newObject.GetValueByJsonKey(endOfPath).ToString(), MainPage.page.GetCurrent().Body.Devices[0].ModuleName);
+                }
+            }
+
+            if (MainPage.page.GetCurrent().Body.Devices[0].Modules.Length > 0)
+            {
+                foreach (var module in MainPage.page.GetCurrent().Body.Devices[0].Modules)
+                {
+                    foreach (var item in ModuleAnnouncements.Announcements)
+                    {
+                        if (item.IsTriggered(module))
+                        {
+                            SerializeableJsonObject newObject = Serialization.Serialize(module, item.Id, out string endOfPath);
+                            NotificationSender.SendWarnNotification(endOfPath, item.Dir, newObject.GetValueByJsonKey(endOfPath).ToString(), module.ModuleName);
+                        }
+                    }
+                }
             }
         }
     }

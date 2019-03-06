@@ -34,13 +34,14 @@ namespace Netmo2.Util
         public static NetmoSettings GetNetmoSettings()
         {
             ApplicationDataContainer data = GetSettings();
-            NetmoSettings settings = new NetmoSettings();
-
-            settings.ClientID = (string)data.Values["client_id"];
-            settings.ClientSecret = (string)data.Values["client_secret"];
-            settings.Password = (string)data.Values["password"];
-            settings.Username = (string)data.Values["username"];
-            settings.DeviceID = (string)data.Values["devId"];
+            NetmoSettings settings = new NetmoSettings
+            {
+                ClientID = (string)data.Values["client_id"],
+                ClientSecret = (string)data.Values["client_secret"],
+                Password = (string)data.Values["password"],
+                Username = (string)data.Values["username"],
+                DeviceID = (string)data.Values["devId"]
+            };
 
             return settings;
         }

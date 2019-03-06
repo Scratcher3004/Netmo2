@@ -10,6 +10,7 @@ Assets\Images\043-warm.png
 Assets\Images\044-warm-1.png
 Assets\Images\empty-cylinder.png
 Assets\Images\spinner-of-dots.png
+Assets\Images\warning.png
 Assets\LargeTile.scale-100.png
 Assets\LargeTile.scale-125.png
 Assets\LargeTile.scale-150.png
@@ -56,6 +57,8 @@ Assets\Wide310x150Logo.scale-125.png
 Assets\Wide310x150Logo.scale-150.png
 Assets\Wide310x150Logo.scale-200.png
 Assets\Wide310x150Logo.scale-400.png
+App.xbf
+MainPage.xbf
 Netmo2.xr.xml
 JsonDeserialize.dll
 Properties\Default.rd.xml

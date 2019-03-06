@@ -356,7 +356,7 @@ namespace Netmo2.Util
         public double Temperature { get; set; }
 
         //[JsonProperty("CO2")]
-        public long Co2 { get; set; }
+        public long Co2 { get; set; } = 0;
 
         //[JsonProperty("Humidity")]
         public long Humidity { get; set; }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Netmo2.Init;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -22,14 +23,20 @@ namespace Netmo2
     /// </summary>
     sealed partial class App : Application
     {
+        public static App app { get; private set; }
+
         /// <summary>
         /// Initialisiert das Singletonanwendungsobjekt. Dies ist die erste Zeile von erstelltem Code
         /// und daher das logische Äquivalent von main() bzw. WinMain().
         /// </summary>
         public App()
         {
+            app = this;
             this.InitializeComponent();
             this.Suspending += OnSuspending;
+
+            // Init
+            MessageInit.Init();
         }
 
         /// <summary>
@@ -95,6 +102,15 @@ namespace Netmo2
             var deferral = e.SuspendingOperation.GetDeferral();
             //TODO: Anwendungszustand speichern und alle Hintergrundaktivitäten beenden
             deferral.Complete();
+        }
+
+        // Events
+        public delegate void OnBackgroundActivatedDel(BackgroundActivatedEventArgs args);
+        public event OnBackgroundActivatedDel OnBackgroundActivatedEvent;
+
+        protected override async void OnBackgroundActivated(BackgroundActivatedEventArgs args)
+        {
+            OnBackgroundActivatedEvent(args);
         }
     }
 }
