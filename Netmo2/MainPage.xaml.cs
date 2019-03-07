@@ -45,6 +45,7 @@ namespace Netmo2
         public MainPage()
         {
             this.InitializeComponent();
+            LocalDataManager.WriteSettings(settings);
 
             try
             {

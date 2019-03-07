@@ -1,4 +1,6 @@
 # Google App Engine generated folder
 appengine-generated/
-Netmo2/bin
+Netmo2/bin/*
+Netmo2/bin/
+Netmo2/obj/
 *.exe
