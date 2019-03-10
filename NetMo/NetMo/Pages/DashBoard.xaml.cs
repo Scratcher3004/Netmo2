@@ -49,7 +49,7 @@ namespace NetMo.Pages
         {
             if (e.SelectedItem is Util.Device selectedDevice)
             {
-                Navigation.PushAsync(new ModulePage(selectedDevice));
+                Navigation.PushAsync(new DevicePage(selectedDevice));
             }
             ((ListView)sender).SelectedItem = null;
         }

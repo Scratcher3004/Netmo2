@@ -189,6 +189,8 @@ namespace NetMo.Util
 
         [JsonProperty("battery_percent")]
         public long BatteryPercent { get; set; }
+
+        public string TexPath { get; set; } = "wetterstationsmodul.jpg";
     }
 
     public partial class ModuleDashboardData

@@ -541,6 +541,27 @@
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\bin\10.0.17763.0\XamlCompiler\Microsoft.UI.Xaml.Markup.winmd">
       <PackagePath>Microsoft.UI.Xaml.Markup.winmd</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\fried\Documents\Visual Studio 2017\Projects\Netmo2\Netmo2\NetMo\NetMo.UWP\air-bag-1696481_1280.jpg">
+      <PackagePath>air-bag-1696481_1280.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\fried\Documents\Visual Studio 2017\Projects\Netmo2\Netmo2\NetMo\NetMo.UWP\air-bag-1857099_1280.jpg">
+      <PackagePath>air-bag-1857099_1280.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\fried\Documents\Visual Studio 2017\Projects\Netmo2\Netmo2\NetMo\NetMo.UWP\boots-774533_1280.jpg">
+      <PackagePath>boots-774533_1280.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\fried\Documents\Visual Studio 2017\Projects\Netmo2\Netmo2\NetMo\NetMo.UWP\living-room-2732939_1280.jpg">
+      <PackagePath>living-room-2732939_1280.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\fried\Documents\Visual Studio 2017\Projects\Netmo2\Netmo2\NetMo\NetMo.UWP\rain-455124_1280.jpg">
+      <PackagePath>rain-455124_1280.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\fried\Documents\Visual Studio 2017\Projects\Netmo2\Netmo2\NetMo\NetMo.UWP\wetterstation.jpg">
+      <PackagePath>wetterstation.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\fried\Documents\Visual Studio 2017\Projects\Netmo2\Netmo2\NetMo\NetMo.UWP\wetterstationsmodul.jpg">
+      <PackagePath>wetterstationsmodul.jpg</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\fried\Documents\Visual Studio 2017\Projects\Netmo2\Netmo2\NetMo\NetMo.UWP\Assets\LargeTile.scale-100.png">
       <PackagePath>Assets\LargeTile.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
@@ -649,14 +670,20 @@
       <PackagePath>Assets\Wide310x150Logo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\fried\Documents\Visual Studio 2017\Projects\Netmo2\Netmo2\NetMo\NetMo.UWP\IndoorPlaceholder.png">
+      <PackagePath>IndoorPlaceholder.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\fried\Documents\Visual Studio 2017\Projects\Netmo2\Netmo2\NetMo\NetMo.UWP\OutdoorPlaceholder.png">
+      <PackagePath>OutdoorPlaceholder.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\fried\Documents\Visual Studio 2017\Projects\Netmo2\Netmo2\NetMo\NetMo.UWP\RainPlaceholder.png">
+      <PackagePath>RainPlaceholder.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\fried\Documents\Visual Studio 2017\Projects\Netmo2\Netmo2\NetMo\NetMo.UWP\WindPlaceholder.png">
+      <PackagePath>WindPlaceholder.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\fried\Documents\Visual Studio 2017\Projects\Netmo2\Netmo2\NetMo\NetMo.UWP\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\fried\Documents\Visual Studio 2017\Projects\Netmo2\Netmo2\NetMo\NetMo.UWP\wetterstation.jpg">
-      <PackagePath>wetterstation.jpg</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\fried\Documents\Visual Studio 2017\Projects\Netmo2\Netmo2\NetMo\NetMo.UWP\wetterstationsmodul.jpg">
-      <PackagePath>wetterstationsmodul.jpg</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\fried\Documents\Visual Studio 2017\Projects\Netmo2\Netmo2\NetMo\NetMo.UWP\bin\x64\Debug\NetMo.UWP.xr.xml">
       <PackagePath>NetMo.UWP.xr.xml</PackagePath>
