@@ -4,3 +4,8 @@ Netmo2/bin/*
 Netmo2/bin/
 Netmo2/obj/
 *.exe
+NetMo/NetMo/bin/*
+NetMo/NetMo/obj/*
+NetMo/NetMo.UWP/bin/*
+NetMo/NetMo.UWP/obj/*
+.vs/*
