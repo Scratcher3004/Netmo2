@@ -1,0 +1,1 @@
+C:\dev\git\netmo\NetMo\NetMo.UWP\NetMo.UWP.csproj;x64
