@@ -7608,24 +7608,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\peter\\.nuget\\packages\\": {},
+    "C:\\Users\\fried\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\dev\\git\\netmo\\NetMo\\NetMo.UWP\\NetMo.UWP.csproj",
+      "projectUniqueName": "C:\\Users\\fried\\Documents\\Visual Studio 2017\\Projects\\Netmo2\\Netmo2\\NetMo\\NetMo.UWP\\NetMo.UWP.csproj",
       "projectName": "NetMo.UWP",
-      "projectPath": "C:\\dev\\git\\netmo\\NetMo\\NetMo.UWP\\NetMo.UWP.csproj",
-      "packagesPath": "C:\\Users\\peter\\.nuget\\packages\\",
-      "outputPath": "C:\\dev\\git\\netmo\\NetMo\\NetMo.UWP\\obj\\",
+      "projectPath": "C:\\Users\\fried\\Documents\\Visual Studio 2017\\Projects\\Netmo2\\Netmo2\\NetMo\\NetMo.UWP\\NetMo.UWP.csproj",
+      "packagesPath": "C:\\Users\\fried\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\fried\\Documents\\Visual Studio 2017\\Projects\\Netmo2\\Netmo2\\NetMo\\NetMo.UWP\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\peter\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\fried\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -7638,8 +7638,8 @@
       "frameworks": {
         "uap10.0.16299": {
           "projectReferences": {
-            "C:\\dev\\git\\netmo\\NetMo\\NetMo\\NetMo.csproj": {
-              "projectPath": "C:\\dev\\git\\netmo\\NetMo\\NetMo\\NetMo.csproj"
+            "C:\\Users\\fried\\Documents\\Visual Studio 2017\\Projects\\Netmo2\\Netmo2\\NetMo\\NetMo\\NetMo.csproj": {
+              "projectPath": "C:\\Users\\fried\\Documents\\Visual Studio 2017\\Projects\\Netmo2\\Netmo2\\NetMo\\NetMo\\NetMo.csproj"
             }
           }
         }

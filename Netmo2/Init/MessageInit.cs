@@ -19,7 +19,7 @@ namespace Netmo2.Init
 
         public MessageInit()
         {
-            int x = 1 + 1;
+            
         }
 
         public async static void Init()

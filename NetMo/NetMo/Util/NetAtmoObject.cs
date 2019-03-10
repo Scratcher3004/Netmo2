@@ -28,6 +28,20 @@ namespace NetMo.Util
 
         [JsonProperty("time_server")]
         public long TimeServer { get; set; }
+
+        private static NetAtmoResponse lastResp;
+        public static NetAtmoResponse LastResponse
+        {
+            get
+            {
+                return lastResp;
+            }
+        }
+
+        public NetAtmoResponse()
+        {
+            lastResp = this;
+        }
     }
 
     public partial class Body
