@@ -28,6 +28,20 @@ namespace NetMo.Util
 
         [JsonProperty("time_server")]
         public long TimeServer { get; set; }
+
+        private static NetAtmoResponse lastResp;
+        public static NetAtmoResponse LastResponse
+        {
+            get
+            {
+                return lastResp;
+            }
+        }
+
+        public NetAtmoResponse()
+        {
+            lastResp = this;
+        }
     }
 
     public partial class Body
@@ -175,6 +189,8 @@ namespace NetMo.Util
 
         [JsonProperty("battery_percent")]
         public long BatteryPercent { get; set; }
+
+        public string TexPath { get; set; } = "wetterstationsmodul.jpg";
     }
 
     public partial class ModuleDashboardData

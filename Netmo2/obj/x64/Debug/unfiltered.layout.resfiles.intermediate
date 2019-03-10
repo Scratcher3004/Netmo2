@@ -1,3 +1,4 @@
+WinMetadata\Windows.winmd
 Assets\00- NETMO-ICON.png
 Assets\BadgeLogo.scale-100.png
 Assets\BadgeLogo.scale-125.png
@@ -61,4 +62,3 @@ MainPage.xbf
 Netmo2.xr.xml
 JsonDeserialize.dll
 Properties\Default.rd.xml
-WinMetadata\Windows.winmd

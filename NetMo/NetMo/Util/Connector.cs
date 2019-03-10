@@ -13,12 +13,12 @@ namespace NetMo.Util
     {
         private string DeviceID { get; set; } =  "";
         public Token CurrentToken { get; private set; }
-        private List<KeyValuePair<string, string>> authParameter { get; set; } = null;
+        private List<KeyValuePair<string, string>> AuthParameter { get; set; } = null;
 
         public void Update(string _clientid, string _clientsecret, string _username, string _password, string _deviceID)
         {
             DeviceID = _deviceID;
-            authParameter = new List<KeyValuePair<string, string>>
+            AuthParameter = new List<KeyValuePair<string, string>>
             {
                 new KeyValuePair<string, string>("client_id", _clientid),
                 new KeyValuePair<string, string>("client_secret", _clientsecret),
@@ -30,7 +30,7 @@ namespace NetMo.Util
             using (HttpClient client = new HttpClient())
             {
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-                HttpResponseMessage response = client.PostAsync("https://api.netatmo.com/oauth2/token", new FormUrlEncodedContent(authParameter)).Result;
+                HttpResponseMessage response = client.PostAsync("https://api.netatmo.com/oauth2/token", new FormUrlEncodedContent(AuthParameter)).Result;
                 if (!response.IsSuccessStatusCode)
                 {
                     CurrentToken = null;
@@ -44,7 +44,7 @@ namespace NetMo.Util
         public Connector(string _clientid, string _clientsecret, string _username, string _password, string _deviceID)
         {
             DeviceID = _deviceID;
-            authParameter = new List<KeyValuePair<string, string>>
+            AuthParameter = new List<KeyValuePair<string, string>>
             {
                 new KeyValuePair<string, string>("client_id", _clientid),
                 new KeyValuePair<string, string>("client_secret", _clientsecret),
@@ -59,7 +59,7 @@ namespace NetMo.Util
             using (HttpClient client = new HttpClient())
             {
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-                HttpResponseMessage response = await client.PostAsync("https://api.netatmo.com/oauth2/token", new FormUrlEncodedContent(authParameter));
+                HttpResponseMessage response = await client.PostAsync("https://api.netatmo.com/oauth2/token", new FormUrlEncodedContent(AuthParameter));
                 if (!response.IsSuccessStatusCode)
                 {
                     CurrentToken = null;
@@ -93,7 +93,7 @@ namespace NetMo.Util
             {
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-                HttpResponseMessage response = client.PostAsync("https://api.netatmo.com/oauth2/token", new FormUrlEncodedContent(authParameter)).Result;
+                HttpResponseMessage response = client.PostAsync("https://api.netatmo.com/oauth2/token", new FormUrlEncodedContent(AuthParameter)).Result;
                 if (!response.IsSuccessStatusCode)
                 {
                     CurrentToken = null;

@@ -30,13 +30,21 @@
     <AppXManifest Include="C:\dev\git\netmo\Netmo2\bin\x64\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+<<<<<<< Updated upstream
       <Modified>2019-03-08T21:34:14.125</Modified>
+=======
+      <Modified>2019-03-06T10:21:47.239</Modified>
+>>>>>>> Stashed changes
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\dev\git\netmo\Netmo2\bin\x64\Debug\Netmo2.exe">
       <PackagePath>entrypoint\Netmo2.exe</PackagePath>
+<<<<<<< Updated upstream
       <Modified>2019-03-08T21:34:09.315</Modified>
+=======
+      <Modified>2019-03-06T10:21:46.081</Modified>
+>>>>>>> Stashed changes
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\UWPNuGetPackages\microsoft.csharp\4.0.1\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -810,11 +818,19 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\dev\git\netmo\Netmo2\bin\x64\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
+<<<<<<< Updated upstream
       <Modified>2019-03-08T21:34:13.108</Modified>
+=======
+      <Modified>2019-03-06T09:13:29.152</Modified>
+>>>>>>> Stashed changes
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\dev\git\netmo\Netmo2\bin\x64\Debug\Core\Netmo2.exe">
       <PackagePath>Netmo2.exe</PackagePath>
+<<<<<<< Updated upstream
       <Modified>2019-03-08T21:34:14.107</Modified>
+=======
+      <Modified>2019-03-06T10:21:47.229</Modified>
+>>>>>>> Stashed changes
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

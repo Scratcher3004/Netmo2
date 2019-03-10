@@ -392,23 +392,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\peter\\.nuget\\packages\\": {},
+    "C:\\Users\\fried\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\dev\\git\\netmo\\NetMo\\NetMo\\NetMo.csproj",
+      "projectUniqueName": "C:\\Users\\fried\\Documents\\Visual Studio 2017\\Projects\\Netmo2\\Netmo2\\NetMo\\NetMo\\NetMo.csproj",
       "projectName": "NetMo",
-      "projectPath": "C:\\dev\\git\\netmo\\NetMo\\NetMo\\NetMo.csproj",
-      "packagesPath": "C:\\Users\\peter\\.nuget\\packages\\",
-      "outputPath": "C:\\dev\\git\\netmo\\NetMo\\NetMo\\obj\\",
+      "projectPath": "C:\\Users\\fried\\Documents\\Visual Studio 2017\\Projects\\Netmo2\\Netmo2\\NetMo\\NetMo\\NetMo.csproj",
+      "packagesPath": "C:\\Users\\fried\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\fried\\Documents\\Visual Studio 2017\\Projects\\Netmo2\\Netmo2\\NetMo\\NetMo\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\peter\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\fried\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

@@ -38,10 +38,7 @@ namespace NetMo.Pages
        
                 foreach (var dev in netAtmoData.Body.Devices)
                 {
-                    Devices.Add(new Util.Device {
-                        StationName = dev.StationName,
-                        Modules = dev.Modules
-                    });
+                    Devices.Add(dev);
                 }
                 lvDevices.ItemsSource = Devices;
             }
@@ -50,10 +47,9 @@ namespace NetMo.Pages
 
         private void LvDevices_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            var selectedDevice = e.SelectedItem as NetMo.Util.Device;
-            if (selectedDevice != null)
+            if (e.SelectedItem is Util.Device selectedDevice)
             {
-                Navigation.PushAsync(new ModulePage(selectedDevice));
+                Navigation.PushAsync(new DevicePage(selectedDevice));
             }
             ((ListView)sender).SelectedItem = null;
         }

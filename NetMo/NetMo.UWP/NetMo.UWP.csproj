@@ -103,6 +103,8 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="air-bag-1696481_1280.jpg" />
+    <Content Include="air-bag-1857099_1280.jpg" />
     <Content Include="Assets\LargeTile.scale-100.png" />
     <Content Include="Assets\LargeTile.scale-200.png" />
     <Content Include="Assets\LargeTile.scale-400.png" />
@@ -130,9 +132,16 @@
     <Content Include="Assets\Wide310x150Logo.scale-100.png" />
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
     <Content Include="Assets\Wide310x150Logo.scale-400.png" />
+    <Content Include="boots-774533_1280.jpg" />
+    <Content Include="IndoorPlaceholder.png" />
+    <Content Include="living-room-2732939_1280.jpg" />
+    <Content Include="OutdoorPlaceholder.png" />
     <Content Include="Properties\Default.rd.xml" />
+    <Content Include="rain-455124_1280.jpg" />
+    <Content Include="RainPlaceholder.png" />
     <Content Include="wetterstation.jpg" />
     <Content Include="wetterstationsmodul.jpg" />
+    <Content Include="WindPlaceholder.png" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
