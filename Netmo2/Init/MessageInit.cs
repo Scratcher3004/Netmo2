@@ -7,13 +7,14 @@ using Windows.ApplicationModel.Activation;
 using Windows.UI.Notifications;
 using Netmo2.Notifaction;
 using Windows.ApplicationModel.Background;
+using JsonDeserialize;
+using Netmo2.Columns;
 
 namespace Netmo2.Init
 {
     public class MessageInit
     {
-        public static AnnouncementCollection announcements = new DefaultDeviceAnnouncementResource().ConvertTo();
-        const string taskName = "NetmoMessageBackgroundTask";
+        const string taskName = "NetmoMessageBackgroundTasks";
         public static MessageInit Current { get; private set; } = new MessageInit();
 
         public MessageInit()
@@ -25,7 +26,7 @@ namespace Netmo2.Init
         {
             MessageInit rent = new MessageInit();
             Current = rent;
-            App.app.OnBackgroundActivatedEvent += Current.OnBackgroundActivated;
+            //App.app.OnBackgroundActivatedEvent += Current.OnBackgroundActivated;
 
             // If background task is already registered, do nothing
             if (BackgroundTaskRegistration.AllTasks.Any(i => i.Value.Name.Equals(taskName)))
@@ -36,17 +37,19 @@ namespace Netmo2.Init
             // Create the background task
             BackgroundTaskBuilder builder = new BackgroundTaskBuilder()
             {
-                Name = taskName
+                Name = taskName,
+                TaskEntryPoint = "Netmo2.Notifaction.BackgroundTask",
+                TaskGroup = new BackgroundTaskRegistrationGroup("Netmo2Messages")
             };
 
             // Assign the toast action trigger
-            builder.SetTrigger(new ToastNotificationActionTrigger());
+            builder.SetTrigger(new TimeTrigger(15, false));
 
             // And register the task
             BackgroundTaskRegistration registration = builder.Register();
         }
 
-        public async void OnBackgroundActivated(BackgroundActivatedEventArgs args)
+        /*public async void OnBackgroundActivated(BackgroundActivatedEventArgs args)
         {
             var deferral = args.TaskInstance.GetDeferral();
 
@@ -56,7 +59,7 @@ namespace Netmo2.Init
                     if (MainPage.page.GetCurrent() == null)
                         break;
 
-                    foreach (var item in announcements.Announcements)
+                    foreach (var item in ContentChanger.DeviceAnnouncements.Announcements)
                     {
                         if (item.IsTriggered(MainPage.page.GetCurrent().Body.Devices[0]))
                         {
@@ -64,9 +67,38 @@ namespace Netmo2.Init
                         }
                     }
                     break;
+
+                case taskName:
+                    if (MainPage.page.GetCurrent() == null)
+                        break;
+
+                    foreach (var item in ContentChanger.DeviceAnnouncements.Announcements)
+                    {
+                        if (item.IsTriggered(MainPage.page.GetCurrent().Body.Devices[0]))
+                        {
+                            SerializeableJsonObject newObject = Serialization.Serialize(MainPage.page.GetCurrent().Body.Devices[0], item.Id, out string endOfPath);
+                            NotificationSender.SendWarnNotification(endOfPath, item.Dir, newObject.GetValueByJsonKey(endOfPath).ToString(), MainPage.page.GetCurrent().Body.Devices[0].ModuleName);
+                        }
+                    }
+
+                    if (MainPage.page.GetCurrent().Body.Devices[0].Modules.Length > 0)
+                    {
+                        foreach (var module in MainPage.page.GetCurrent().Body.Devices[0].Modules)
+                        {
+                            foreach (var item in ContentChanger.ModuleAnnouncements.Announcements)
+                            {
+                                if (item.IsTriggered(module))
+                                {
+                                    SerializeableJsonObject newObject = Serialization.Serialize(module, item.Id, out string endOfPath);
+                                    NotificationSender.SendWarnNotification(endOfPath, item.Dir, newObject.GetValueByJsonKey(endOfPath).ToString(), module.ModuleName);
+                                }
+                            }
+                        }
+                    }
+                    break;
             }
 
             deferral.Complete();
-        }
+        }*/
     }
 }

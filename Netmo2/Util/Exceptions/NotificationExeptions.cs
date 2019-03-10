@@ -17,10 +17,11 @@ namespace Netmo2.Util.Exceptions
         /// </summary>
         /// <param name="end">
         /// Joined on the end of the message. Examples:
-        /// "No Content found in " +
-        ///                          "List of Announcements"
-        ///                          "Dictionary of translationsin jp_JP"
+        /// "No Content found in " + 
+        ///                          "List of Announcements", 
+        ///                          "Dictionary of translationsin jp_JP", 
         ///                          ...
+        ///                                                                 + "!"
         /// </param>
         public NoContentException(string end) : base("No Content found in " + end + "!")
         {
