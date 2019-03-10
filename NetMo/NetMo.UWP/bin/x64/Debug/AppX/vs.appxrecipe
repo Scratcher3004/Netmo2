@@ -30,13 +30,13 @@
     <AppXManifest Include="C:\dev\git\netmo\NetMo\NetMo.UWP\bin\x64\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2019-03-10T13:30:19.864</Modified>
+      <Modified>2019-03-10T19:16:38.840</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\dev\git\netmo\NetMo\NetMo.UWP\bin\x64\Debug\NetMo.UWP.exe">
       <PackagePath>entrypoint\NetMo.UWP.exe</PackagePath>
-      <Modified>2019-03-10T13:30:17.808</Modified>
+      <Modified>2019-03-10T19:16:37.215</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\peter\.nuget\packages\newtonsoft.json\12.0.1\lib\netstandard2.0\Newtonsoft.Json.dll">
       <PackagePath>Newtonsoft.Json.dll</PackagePath>
@@ -716,7 +716,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\dev\git\netmo\NetMo\NetMo\bin\Debug\netstandard2.0\NetMo.dll">
       <PackagePath>NetMo.dll</PackagePath>
-      <Modified>2019-03-10T13:23:13.310</Modified>
+      <Modified>2019-03-10T19:16:26.913</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\bin\10.0.17763.0\XamlCompiler\Microsoft.UI.Xaml.Markup.winmd">
       <PackagePath>Microsoft.UI.Xaml.Markup.winmd</PackagePath>
@@ -875,11 +875,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\dev\git\netmo\NetMo\NetMo.UWP\bin\x64\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2019-03-10T13:30:17.506</Modified>
+      <Modified>2019-03-10T19:16:36.882</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\dev\git\netmo\NetMo\NetMo.UWP\bin\x64\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2019-03-10T13:30:17.508</Modified>
+      <Modified>2019-03-10T19:16:36.884</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.17763.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -895,7 +895,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\dev\git\netmo\NetMo\NetMo.UWP\bin\x64\Debug\Core\NetMo.UWP.exe">
       <PackagePath>NetMo.UWP.exe</PackagePath>
-      <Modified>2019-03-10T13:30:19.849</Modified>
+      <Modified>2019-03-10T19:16:38.824</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

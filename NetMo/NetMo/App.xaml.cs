@@ -11,6 +11,11 @@ namespace NetMo
         {
             InitializeComponent();
 
+            //Util.LocalDataManager.WriteSettings(NetmoSettings.Instance);
+            //var settings = Util.LocalDataManager.ReadSettings();
+            //Util.LocalDataManager.WriteSettings(NetmoSettings.Instance);
+            //var settings2 = Util.LocalDataManager.ReadSettings();
+
             MainPage = new NavigationPage(new Pages.HomePage());
         }
 

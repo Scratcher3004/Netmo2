@@ -3,10 +3,18 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="NetMo.Pages.Settings">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Margin="10">
+            <Label>ClientId</Label>
+            <Entry x:Name="EntClientId" Placeholder="ClientId"></Entry>
+            <Label>ClientSecret</Label>
+            <Entry x:Name="EntClientSecret" Placeholder="ClientSecret"></Entry>
+            <Label>Username</Label>
+            <Entry x:Name="EntUserName" Placeholder="Username"></Entry>
+            <Label>Password</Label>
+            <Entry x:Name="EntPassword" Placeholder="Password"></Entry>
+            <Label>DeviceId</Label>
+            <Entry x:Name="EntDeviceId" Placeholder="DeviceId (MAC address)"></Entry>
+            <Button x:Name="BtnSaveSettings" Clicked="BtnSaveSettings_Clicked" Text="Save Settings" TextColor="White" FontSize="Medium" BackgroundColor="#f50057"></Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

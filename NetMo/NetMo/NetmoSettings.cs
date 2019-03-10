@@ -27,6 +27,15 @@ namespace NetMo
             }
         }
 
+        public static void SetSettings(string clientid, string clientsecret, string username, string password, string deviceid)
+        {
+            Instance.ClientID = clientid;
+            Instance.ClientSecret = clientsecret;
+            Instance.Username = username;
+            Instance.Password = password;
+            Instance.DeviceID = deviceid;
+        }
+
         private NetmoSettings()
         {
 

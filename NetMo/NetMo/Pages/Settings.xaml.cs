@@ -16,5 +16,10 @@ namespace NetMo.Pages
 		{
 			InitializeComponent ();
 		}
-	}
+
+        private void BtnSaveSettings_Clicked(object sender, EventArgs e)
+        {
+            NetmoSettings.SetSettings(EntClientId.Text, EntClientSecret.Text, EntUserName.Text, EntPassword.Text, EntDeviceId.Text);
+        }
+    }
 }

@@ -4,11 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using NetMo;
+using NetMo.Pages;
+using Xamarin.Forms;
 
 namespace NetMo.Util
 {
-    public class LocalDataManager
+    public static class LocalDataManager
     {
+
+        private const string NETMOSETTINGS = "NetmoTestSettings";
+
         //public static StorageFolder GetDataPath()
         //{
         //    StorageFolder localFolder = ApplicationData.Current.LocalFolder;
@@ -23,12 +28,18 @@ namespace NetMo.Util
 
         public static void WriteSettings(NetmoSettings settings)
         {
-            throw new NotImplementedException();
-            //ApplicationDataContainer data = GetSettings();
-            //foreach (var item in settings.GetSettings())
-            //{
-            //    data.Values[item.Key] = item.Value;
-            //}
+            Xamarin.Forms.Application.Current.Properties[NETMOSETTINGS] = settings;
+        }
+
+        public static NetmoSettings ReadSettings()
+        {
+            if (Xamarin.Forms.Application.Current.Properties.ContainsKey(NETMOSETTINGS))
+            {
+                var x = Xamarin.Forms.Application.Current.Properties[NETMOSETTINGS];
+
+                return NetmoSettings.Instance;
+            }
+            return null;
         }
 
         //public static NetmoSettings GetNetmoSettings()

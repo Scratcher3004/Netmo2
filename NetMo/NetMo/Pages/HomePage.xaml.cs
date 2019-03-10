@@ -17,6 +17,13 @@ namespace NetMo.Pages
         public HomePage ()
         {
             InitializeComponent();
+
+            var settings = Util.LocalDataManager.ReadSettings();
+            if (settings == null)
+            {
+                DisplayAlert("Info", "Settings not found!", "okay");
+            }
+
         }
 
     }
