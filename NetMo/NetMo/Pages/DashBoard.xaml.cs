@@ -22,10 +22,9 @@ namespace NetMo.Pages
         public DashBoard ()
 		{
 			InitializeComponent ();
-            connector = new Connector(NetmoSettings.Instance.ClientID, NetmoSettings.Instance.ClientSecret, NetmoSettings.Instance.Username, 
-                                      NetmoSettings.Instance.Password, NetmoSettings.Instance.DeviceID);
+            connector = new Connector(UserSettings.ClientId, UserSettings.ClientSecret, UserSettings.UserName, UserSettings.Password, UserSettings.DeviceId);
 
-        Devices = new ObservableCollection<Util.Device>();
+            Devices = new ObservableCollection<Util.Device>();
         }
 
         protected override async void OnAppearing()
@@ -34,7 +33,16 @@ namespace NetMo.Pages
 
             if (First)
             {
-                var result = await ReadWeatherData();
+                try
+                {
+                    var result = await ReadWeatherData();
+                }
+                catch (Exception ex)
+                {
+                    await DisplayAlert("Fehler!", ex.Message.ToString(), "okay");
+                    return;
+                }
+
        
                 foreach (var dev in netAtmoData.Body.Devices)
                 {

@@ -26,21 +26,28 @@ namespace NetMo.Util
         //    return roamingSettings;
         //}
 
-        public static void WriteSettings(NetmoSettings settings)
-        {
-            Xamarin.Forms.Application.Current.Properties[NETMOSETTINGS] = settings;
-        }
+        //public static void WriteSettings(NetmoSettings settings)
+        //{
+        //    Xamarin.Forms.Application.Current.Properties[NETMOSETTINGS] = settings;
+        //    if (Xamarin.Forms.Application.Current.Properties.ContainsKey(NETMOSETTINGS))
+        //    {
+        //        var x = Xamarin.Forms.Application.Current.Properties[NETMOSETTINGS];
 
-        public static NetmoSettings ReadSettings()
-        {
-            if (Xamarin.Forms.Application.Current.Properties.ContainsKey(NETMOSETTINGS))
-            {
-                var x = Xamarin.Forms.Application.Current.Properties[NETMOSETTINGS];
+        //    }
+        //}
 
-                return NetmoSettings.Instance;
-            }
-            return null;
-        }
+        //public static NetmoSettings ReadSettings()
+        //{
+        //    var sd = UserSettings.UserName;
+            
+        //    //if (Xamarin.Forms.Application.Current.Properties.ContainsKey(NETMOSETTINGS))
+        //    //{
+        //    //    var x = Xamarin.Forms.Application.Current.Properties[NETMOSETTINGS];
+
+        //    //    return NetmoSettings.Instance;
+        //    //}
+        //    return null;
+        //}
 
         //public static NetmoSettings GetNetmoSettings()
         //{

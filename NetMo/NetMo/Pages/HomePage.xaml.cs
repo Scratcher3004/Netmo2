@@ -18,11 +18,15 @@ namespace NetMo.Pages
         {
             InitializeComponent();
 
-            var settings = Util.LocalDataManager.ReadSettings();
-            if (settings == null)
-            {
-                DisplayAlert("Info", "Settings not found!", "okay");
-            }
+            //var settings = Util.LocalDataManager.ReadSettings();
+
+            //if (settings == null)
+            //{
+            //    DisplayAlert("Info", "Settings not found!", "okay");
+            //}
+            //else {
+            //    NetmoSettings.SetSettings(settings.ClientID, settings.ClientSecret, settings.Username, settings.Password, settings.DeviceID);
+            //}
 
         }
 
