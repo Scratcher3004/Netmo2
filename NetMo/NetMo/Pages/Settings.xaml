@@ -11,7 +11,7 @@
             <Label>Username</Label>
             <Entry x:Name="EntUserName" Placeholder="Username"></Entry>
             <Label>Password</Label>
-            <Entry x:Name="EntPassword" Placeholder="Password"></Entry>
+            <Entry x:Name="EntPassword" Placeholder="Password" IsPassword="True"></Entry>
             <Label>DeviceId</Label>
             <Entry x:Name="EntDeviceId" Placeholder="DeviceId (MAC address)"></Entry>
             <Button x:Name="BtnSaveSettings" Clicked="BtnSaveSettings_Clicked" Text="Save Settings" TextColor="White" FontSize="Medium" BackgroundColor="#f50057"></Button>
