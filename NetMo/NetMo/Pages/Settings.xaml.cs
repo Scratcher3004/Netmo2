@@ -12,8 +12,11 @@ namespace NetMo.Pages
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class Settings : ContentPage
 	{
+        public static Settings s;
+
 		public Settings ()
 		{
+            s = this;
 			InitializeComponent ();
             EntUserName.Text = UserSettings.UserName;
             EntPassword.Text = UserSettings.Password;

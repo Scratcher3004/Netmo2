@@ -39,7 +39,13 @@ namespace NetMo.Pages
                 }
                 catch (Exception ex)
                 {
-                    await DisplayAlert("Fehler!", ex.Message.ToString(), "okay");
+                    if (UserSettings.ClientId != "" && UserSettings.ClientSecret != "" && UserSettings.Password != "" && UserSettings.UserName != "" && UserSettings.DeviceId != "")
+                        await DisplayAlert("Verbindungsfehler!", ex.Message.ToString(), "OK");
+                    else
+                    {
+                        await DisplayAlert("Verbindungsfehler!", "Einstellungen wurden nicht komplett ausgefüllt. Bitte füllen sie jene aus!", "OK");
+                        HomePage.pg.SelectedItem = Settings.s;
+                    }
                     return;
                 }
 

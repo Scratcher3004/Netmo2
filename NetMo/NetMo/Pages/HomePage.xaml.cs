@@ -13,9 +13,11 @@ namespace NetMo.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class HomePage : TabbedPage
     {
+        public static HomePage pg;
 
         public HomePage ()
         {
+            pg = this;
             InitializeComponent();
 
             //var settings = Util.LocalDataManager.ReadSettings();
