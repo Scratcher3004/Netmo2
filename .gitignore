@@ -8,3 +8,8 @@ NetMo/NetMo/obj/
 NetMo/NetMo.UWP/bin/
 NetMo/NetMo.UWP/obj/
 .vs/
+*.suo
+*.user
+bin
+obj
+packages
