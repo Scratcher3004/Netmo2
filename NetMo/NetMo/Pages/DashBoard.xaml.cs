@@ -81,7 +81,7 @@ namespace NetMo.Pages
 
             if (wetterdaten.Status.ToLower() == "ok")
             {
-                this.netAtmoData = wetterdaten;
+                netAtmoData = wetterdaten;
                 return true;
             }
             return false;

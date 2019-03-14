@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace NetMo
+namespace NetMo.Util
 {
     //public class NetmoSettings
     //{

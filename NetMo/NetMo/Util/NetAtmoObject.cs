@@ -191,6 +191,7 @@ namespace NetMo.Util
         public long BatteryPercent { get; set; }
 
         public string TexPath { get; set; } = "wetterstationsmodul.jpg";
+        public string TranslatedType { get; set; } = "TranslationError NAModule1";
     }
 
     public partial class ModuleDashboardData

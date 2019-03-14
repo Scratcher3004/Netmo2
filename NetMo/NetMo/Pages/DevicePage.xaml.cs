@@ -7,6 +7,10 @@ using NetMo.Util;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using System.Collections.ObjectModel;
+using NetMo.Pages.Devices;
+using NetMo.Util.Translation;
+
+using static NetMo.Util.TimeHelpers;
 
 namespace NetMo.Pages
 {
@@ -45,19 +49,23 @@ namespace NetMo.Pages
                     default:
                         break;
                 }
-                module.Type = mType;
+                module.TranslatedType = mType;
                 ModulesCollection.Add(module);
             }
             LvModules.ItemsSource = ModulesCollection;
-            foreach (var item in LvModules.ItemsSource)
-            {
 
-            }
-            
+            temperatureField.Text = device.DashboardData.Temperature.ToString() + " °C";
+            temperatureTrend.Text = Helpers.GetTrendEng(device.DashboardData.TempTrend);
 
-            temperatureField.Text = (device.DashboardData.Temperature).ToString() + "°C";
-            co2Field.Text = (device.DashboardData.Co2).ToString() + "PPM";
-            humidityField.Text = (device.DashboardData.Humidity).ToString() + "%";
+            tempMin.Text = device.DashboardData.MinTemp.ToString() + " °C";
+            DateTime dtMinTemp = TimestampToDateTime(device.DashboardData.DateMinTemp);
+            tempMinDate.Text = dtMinTemp.Month.ToString() + "." + dtMinTemp.Day.ToString() /*+ "."*/;
+
+            pressureField.Text = device.DashboardData.Pressure.ToString() + " mBar";
+            pressureTrend.Text = Helpers.GetTrendEng(device.DashboardData.PressureTrend);
+
+            co2Field.Text = device.DashboardData.Co2.ToString() + " PPM";
+            humidityField.Text = device.DashboardData.Humidity.ToString() + " %";
 
             stationName.Text = device.StationName;
             moduleName.Text = device.ModuleName + " (Internal Module)";
@@ -67,5 +75,21 @@ namespace NetMo.Pages
             else
                 externalModulesLabel.Text = "";
         }
-	}
+
+        private void LvModules_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            if (e.SelectedItem is Module selectedDevice)
+            {
+                switch (selectedDevice.Type)
+                {
+                    case "NAModule4":
+                        Navigation.PushAsync(new IndoorModule(selectedDevice));
+                        break;
+                    default:
+                        break;
+                }
+            }
+            ((ListView)sender).SelectedItem = null;
+        }
+    }
 }
