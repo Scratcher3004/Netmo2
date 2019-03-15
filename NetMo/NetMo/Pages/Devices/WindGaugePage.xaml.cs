@@ -24,9 +24,9 @@ namespace NetMo.Pages.Devices
             moduleName.Text = indoorModule.ModuleName;
             lastMessure.Text = "Last Measure: " + (TimestampToDateTime(indoorModule.LastMessage)).Minute.ToString() + " Minutes ago";
 
-            rainField.Text = indoorModule.DashboardData.Rain + " mm";
+            /*rainField.Text = indoorModule.DashboardData.Rain + " mm";
             sumH.Text = indoorModule.DashboardData.SumRainH + " mm";
-            sumD.Text = indoorModule.DashboardData.SumRainD + " mm";
+            sumD.Text = indoorModule.DashboardData.SumRainD + " mm";*/
         }
     }
 }

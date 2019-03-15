@@ -238,6 +238,30 @@ namespace NetMo.Util
         public double? SumRainD { get; set; }
 
         // Wind Gauges
+
+        [JsonProperty("WindStrength", NullValueHandling = NullValueHandling.Ignore)]
+        public double? WindStrength { get; set; }
+
+        [JsonProperty("WindAngle", NullValueHandling = NullValueHandling.Ignore)]
+        public long? WindAngle { get; set; }
+
+        [JsonProperty("Guststrength", NullValueHandling = NullValueHandling.Ignore)]
+        public double? GustStrength { get; set; }
+
+        [JsonProperty("GustAngle", NullValueHandling = NullValueHandling.Ignore)]
+        public long? GustAngle { get; set; }
+
+        [JsonProperty("WindHistoric", NullValueHandling = NullValueHandling.Ignore)]
+        public WindHistoric WindHistoric { get; set; }
+    }
+
+    public partial class WindHistoric
+    {
+        [JsonProperty("WindStrength", NullValueHandling = NullValueHandling.Ignore)]
+        public double? WindStrength { get; set; }
+
+        [JsonProperty("WindAngle", NullValueHandling = NullValueHandling.Ignore)]
+        public long? WindAngle { get; set; }
     }
 
     public partial class Place
