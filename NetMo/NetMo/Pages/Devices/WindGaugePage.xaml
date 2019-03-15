@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NetMo.Pages.Devices.WindGaugePage">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="15"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="5"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="15"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.ColumnSpan="9" Grid.Row="0" XAlign="Center" FontSize="Large" FontAttributes="Bold" x:Name="moduleName"></Label>
+
+            <Label Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="5" x:Name="lastMessure" FontSize="Medium" FontAttributes="Bold">Last Messure: 20 minutes Ago</Label>
+
+            <Label Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="4" FontSize="Small" FontAttributes="Italic">Rain:</Label>
+            <Label Grid.Column="5" Grid.ColumnSpan="1" Grid.Row="4" FontSize="Small" FontAttributes="None" x:Name="rainField"></Label>
+
+            <Label Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="5" FontSize="Small" FontAttributes="Italic">Rain last    hour:</Label>
+            <Label Grid.Column="5" Grid.ColumnSpan="2" Grid.Row="5" FontSize="Small" FontAttributes="None" x:Name="sumH">{rl1}</Label>
+            <Label Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="6" FontSize="Small" FontAttributes="Italic">Rain last 24 hours:</Label>
+            <Label Grid.Column="5" Grid.ColumnSpan="2" Grid.Row="6" FontSize="Small" FontAttributes="None" x:Name="sumD">{rl24}</Label>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

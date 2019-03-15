@@ -39,7 +39,7 @@ namespace NetMo.Pages
                         module.TexPath = "WindPlaceholder.png";
                         break;
                     case "NAModule3":
-                        mType = "Rain Gauge - Coming soon";
+                        mType = "Rain Gauge - NOT TESTED YET!";
                         module.TexPath = "RainPlaceholder.png";
                         break;
                     case "NAModule4":
@@ -49,6 +49,12 @@ namespace NetMo.Pages
                     default:
                         break;
                 }
+
+                if (!module.Reachable)
+                {
+                    mType = "NOT REACHABLE";
+                }
+
                 module.TranslatedType = mType;
                 ModulesCollection.Add(module);
             }
@@ -59,13 +65,19 @@ namespace NetMo.Pages
 
             tempMin.Text = device.DashboardData.MinTemp.ToString() + " °C";
             DateTime dtMinTemp = TimestampToDateTime(device.DashboardData.DateMinTemp);
-            tempMinDate.Text = dtMinTemp.Month.ToString() + "." + dtMinTemp.Day.ToString() /*+ "."*/;
+            tempMinDate.Text = dtMinTemp.Month + "." + dtMinTemp.Day + "." + dtMinTemp.Year + "  " + dtMinTemp.Hour + ":" + dtMinTemp.Minute;
+
+            tempMax.Text = device.DashboardData.MaxTemp.ToString() + " °C";
+            DateTime dtMaxTemp = TimestampToDateTime(device.DashboardData.DateMaxTemp);
+            tempMaxDate.Text = dtMaxTemp.Month + "." + dtMaxTemp.Day + "." + dtMaxTemp.Year + "  " + dtMaxTemp.Hour + ":" + dtMaxTemp.Minute;
 
             pressureField.Text = device.DashboardData.Pressure.ToString() + " mBar";
             pressureTrend.Text = Helpers.GetTrendEng(device.DashboardData.PressureTrend);
+            absolutePressureField.Text = device.DashboardData.AbsolutePressure.ToString() + " mBar";
 
             co2Field.Text = device.DashboardData.Co2.ToString() + " PPM";
             humidityField.Text = device.DashboardData.Humidity.ToString() + " %";
+            noiseField.Text = device.DashboardData.Noise.ToString() + " dB";
 
             stationName.Text = device.StationName;
             moduleName.Text = device.ModuleName + " (Internal Module)";
@@ -76,14 +88,28 @@ namespace NetMo.Pages
                 externalModulesLabel.Text = "";
         }
 
-        private void LvModules_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        private async void LvModules_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             if (e.SelectedItem is Module selectedDevice)
             {
+                if (!selectedDevice.Reachable)
+                {
+                    await DisplayAlert("Module not reachable!", "This Module is not reachable currently!" +
+                        " So, data can not be read and displayed in this application. Make sure, the module" +
+                        " has connection to the station and the station to your wifi!", "OK");
+                    return;
+                }
                 switch (selectedDevice.Type)
                 {
+                    case "NAModule1":
+                        await Navigation.PushAsync(new OutdoorModulePage(selectedDevice));
+                        break;
+
+                    case "NAModule3":
+                        await Navigation.PushAsync(new RainGaugePage(selectedDevice));
+                        break;
                     case "NAModule4":
-                        Navigation.PushAsync(new IndoorModule(selectedDevice));
+                        await Navigation.PushAsync(new IndoorModulePage(selectedDevice));
                         break;
                     default:
                         break;

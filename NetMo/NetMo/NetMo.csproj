@@ -19,13 +19,22 @@
     <Compile Update="Pages\DevicePage.xaml.cs">
       <DependentUpon>DevicePage.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Pages\Devices\IndoorModulePage.xaml.cs">
+      <DependentUpon>IndoorModulePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Pages\Devices\OutdoorModulePage.xaml.cs">
+      <DependentUpon>OutdoorModulePage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Update="Pages\DashBoard.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Pages\Devices\IndoorModule.xaml">
+    <EmbeddedResource Update="Pages\Devices\IndoorModulePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\Devices\OutdoorModulePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Pages\HomePage.xaml">

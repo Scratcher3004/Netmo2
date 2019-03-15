@@ -199,29 +199,45 @@ namespace NetMo.Util
         [JsonProperty("time_utc")]
         public long TimeUtc { get; set; }
 
-        [JsonProperty("Temperature")]
-        public double Temperature { get; set; }
+        // Outdoor/Indoor Modules
 
-        [JsonProperty("Humidity")]
-        public long Humidity { get; set; }
+        [JsonProperty("Temperature", NullValueHandling = NullValueHandling.Ignore)]
+        public double? Temperature { get; set; }
 
-        [JsonProperty("min_temp")]
-        public double MinTemp { get; set; }
+        [JsonProperty("Humidity", NullValueHandling = NullValueHandling.Ignore)]
+        public long? Humidity { get; set; }
 
-        [JsonProperty("max_temp")]
-        public double MaxTemp { get; set; }
+        [JsonProperty("min_temp", NullValueHandling = NullValueHandling.Ignore)]
+        public double? MinTemp { get; set; }
 
-        [JsonProperty("date_min_temp")]
-        public long DateMinTemp { get; set; }
+        [JsonProperty("max_temp", NullValueHandling = NullValueHandling.Ignore)]
+        public double? MaxTemp { get; set; }
 
-        [JsonProperty("date_max_temp")]
-        public long DateMaxTemp { get; set; }
+        [JsonProperty("date_min_temp", NullValueHandling = NullValueHandling.Ignore)]
+        public long? DateMinTemp { get; set; }
 
-        [JsonProperty("temp_trend")]
+        [JsonProperty("date_max_temp", NullValueHandling = NullValueHandling.Ignore)]
+        public long? DateMaxTemp { get; set; }
+
+        [JsonProperty("temp_trend", NullValueHandling = NullValueHandling.Ignore)]
         public string TempTrend { get; set; }
 
+        // Indoor Modules
         [JsonProperty("CO2", NullValueHandling = NullValueHandling.Ignore)]
         public long? Co2 { get; set; }
+
+        // Rain Gauges
+
+        [JsonProperty("Rain", NullValueHandling = NullValueHandling.Ignore)]
+        public double? Rain { get; set; }
+
+        [JsonProperty("sum_rain_1", NullValueHandling = NullValueHandling.Ignore)]
+        public double? SumRainH { get; set; }
+
+        [JsonProperty("sum_rain_24", NullValueHandling = NullValueHandling.Ignore)]
+        public double? SumRainD { get; set; }
+
+        // Wind Gauges
     }
 
     public partial class Place

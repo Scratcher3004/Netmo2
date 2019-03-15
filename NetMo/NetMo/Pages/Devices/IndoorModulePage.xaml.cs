@@ -13,11 +13,11 @@ using static NetMo.Util.TimeHelpers;
 namespace NetMo.Pages.Devices
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class IndoorModule : ContentPage
+    public partial class IndoorModulePage : ContentPage
     {
         private Module module;
 
-        public IndoorModule(Module indoorModule)
+        public IndoorModulePage(Module indoorModule)
         {
             InitializeComponent();
             module = indoorModule;
@@ -28,6 +28,14 @@ namespace NetMo.Pages.Devices
             temperatureField.Text = indoorModule.DashboardData.Temperature + " °C";
             co2Field.Text = indoorModule.DashboardData.Co2 + " PPM";
             humidityField.Text = indoorModule.DashboardData.Humidity + " %";
+
+            tempMin.Text = indoorModule.DashboardData.MinTemp.ToString() + " °C";
+            DateTime dtMinTemp = TimestampToDateTime((long)indoorModule.DashboardData.DateMinTemp);
+            tempMinDate.Text = dtMinTemp.Month + "." + dtMinTemp.Day + "." + dtMinTemp.Year + "  " + dtMinTemp.Hour + ":" + dtMinTemp.Minute;
+
+            tempMax.Text = indoorModule.DashboardData.MaxTemp.ToString() + " °C";
+            DateTime dtMaxTemp = TimestampToDateTime((long)indoorModule.DashboardData.DateMaxTemp);
+            tempMaxDate.Text = dtMaxTemp.Month + "." + dtMaxTemp.Day + "." + dtMaxTemp.Year + "  " + dtMaxTemp.Hour + ":" + dtMaxTemp.Minute;
 
             temperatureTrend.Text = Helpers.GetTrendEng(indoorModule.DashboardData.TempTrend);
         }
