@@ -17,6 +17,7 @@ namespace NetMo.Pages
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class DevicePage : ContentPage
 	{
+
         public ObservableCollection<Module> ModulesCollection;
         public DevicePage (Util.Device device)
 		{
@@ -61,7 +62,7 @@ namespace NetMo.Pages
             LvModules.ItemsSource = ModulesCollection;
 
             temperatureField.Text = device.DashboardData.Temperature.ToString() + " °C";
-            temperatureTrend.Text = Helpers.GetTrendEng(device.DashboardData.TempTrend);
+            temperatureTrend.Source = Trend.GetTrend(device.DashboardData.TempTrend);
 
             tempMin.Text = device.DashboardData.MinTemp.ToString() + " °C";
             DateTime dtMinTemp = TimestampToDateTime(device.DashboardData.DateMinTemp);
@@ -69,10 +70,10 @@ namespace NetMo.Pages
 
             tempMax.Text = device.DashboardData.MaxTemp.ToString() + " °C";
             DateTime dtMaxTemp = TimestampToDateTime(device.DashboardData.DateMaxTemp);
-            tempMaxDate.Text = dtMaxTemp.Month + "." + dtMaxTemp.Day + "." + dtMaxTemp.Year + "  " + dtMaxTemp.Hour + ":" + dtMaxTemp.Minute;
+            tempMaxDate.Text =  dtMaxTemp.Month + "." + dtMaxTemp.Day + "." + dtMaxTemp.Year + "  " + dtMaxTemp.Hour + ":" + dtMaxTemp.Minute;
 
             pressureField.Text = device.DashboardData.Pressure.ToString() + " mBar";
-            pressureTrend.Text = Helpers.GetTrendEng(device.DashboardData.PressureTrend);
+            pressureTrend.Text = Trend.GetTrend(device.DashboardData.PressureTrend);
             absolutePressureField.Text = device.DashboardData.AbsolutePressure.ToString() + " mBar";
 
             co2Field.Text = device.DashboardData.Co2.ToString() + " PPM";
