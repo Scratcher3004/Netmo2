@@ -37,7 +37,7 @@ namespace NetMo.Pages.Devices
             DateTime dtMaxTemp = TimestampToDateTime((long)indoorModule.DashboardData.DateMaxTemp);
             tempMaxDate.Text = dtMaxTemp.Month + "." + dtMaxTemp.Day + "." + dtMaxTemp.Year + "  " + dtMaxTemp.Hour + ":" + dtMaxTemp.Minute;
 
-            temperatureTrend.Text = Helpers.GetTrendEng(indoorModule.DashboardData.TempTrend);
+            temperatureTrend.Text = Trend.GetTrend(indoorModule.DashboardData.TempTrend);
         }
     }
 }

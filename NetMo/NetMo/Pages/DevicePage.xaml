@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="NetMo.Pages.DevicePage">
     <ContentPage.Content>
-        <Grid>
+        <ScrollView Orientation="Vertical" VerticalScrollBarVisibility="Always">
+        <Grid Padding="10">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="15"/>
@@ -23,50 +24,54 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="10"/>
-                <ColumnDefinition Width="20"/>
                 <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="15"/>
+                <!--<ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="15"/>-->
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="Auto"/>
+                <!--<ColumnDefinition Width="Auto"/>-->
             </Grid.ColumnDefinitions>
 
-            <Label Grid.ColumnSpan="9" Grid.Row="0" XAlign="Center" FontSize="Large" FontAttributes="Bold" x:Name="stationName" 
+            <Label Grid.ColumnSpan="3" Grid.Column="0" Grid.Row="0" XAlign="Center" FontSize="Large" FontAttributes="Bold" x:Name="stationName" 
                    HorizontalTextAlignment="Center" VerticalTextAlignment="Center">{StationName}</Label>
-            <Label Grid.Column="2" Grid.ColumnSpan="6" Grid.Row="2" FontSize="Medium" FontAttributes="Bold" x:Name="moduleName">{InternalModuleName}(Internal Module)</Label>
+            <Label Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="2" FontSize="Medium" FontAttributes="Bold" x:Name="moduleName">{InternalModuleName}(Internal Module)</Label>
 
-            <Label Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="4" FontSize="Small" FontAttributes="Italic">Temperature:</Label>
-                <Label Grid.Column="5" Grid.ColumnSpan="2" Grid.Row="4" FontSize="Small" FontAttributes="None" x:Name="temperatureField">{temperature}</Label>
-                    <Label Grid.Column="8" Grid.ColumnSpan="1" Grid.Row="4" FontSize="Small" FontAttributes="None" x:Name="temperatureTrend" HorizontalTextAlignment="End"
-                           Margin="0,0,30,0">{temperatureTrend}</Label>
-            <Label Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="5" FontSize="Small" FontAttributes="Italic">Lowest Temerature:</Label>
-                <Label Grid.Column="5" Grid.ColumnSpan="2" Grid.Row="5" FontSize="Small" FontAttributes="None" x:Name="tempMin">{temperature}</Label>
-                    <Label Grid.Column="8" Grid.ColumnSpan="1" Grid.Row="5" FontSize="Small" FontAttributes="None" x:Name="tempMinDate" HorizontalTextAlignment="End"
+            <Image Grid.Column="0" Grid.Row="4" Source="temperature-80.png" Scale="0.5"></Image>
+            <!--<Label Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="4" FontSize="Small" FontAttributes="Italic">Temperature:</Label>-->
+                <Label Grid.Column="1" Grid.Row="4" FontSize="Medium" FontAttributes="Bold" x:Name="temperatureField" HorizontalTextAlignment="Center" VerticalTextAlignment="Center">{temperature}</Label>
+            <Image Grid.Column="2" Grid.Row="4" Source="{Binding }" Scale="0.5" x:Name="temperatureTrend"></Image>
+            <!--<Label Grid.Column="8" Grid.ColumnSpan="1" Grid.Row="4" FontSize="Small" FontAttributes="None" x:Name="temperatureTrend" HorizontalTextAlignment="End"
+                           Margin="0,0,30,0">{temperatureTrend}</Label>-->
+            
+            <Label Grid.Column="0" Grid.Row="5" FontSize="Small" FontAttributes="Italic">Lowest Temerature:</Label>
+                <Label Grid.Column="1" Grid.Row="5" FontSize="Small" FontAttributes="None" x:Name="tempMin">{temperature}</Label>
+                    <Label Grid.Column="2" Grid.Row="5" FontSize="Small" FontAttributes="None" x:Name="tempMinDate" HorizontalTextAlignment="End"
                            Margin="0,0,30,0">{timestampTempMin}</Label>
-            <Label Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="6" FontSize="Small" FontAttributes="Italic">Highest Temerature:</Label>
-                <Label Grid.Column="5" Grid.ColumnSpan="2" Grid.Row="6" FontSize="Small" FontAttributes="None" x:Name="tempMax">{temperature}</Label>
-                    <Label Grid.Column="8" Grid.ColumnSpan="1" Grid.Row="6" FontSize="Small" FontAttributes="None" x:Name="tempMaxDate" HorizontalTextAlignment="End"
+            
+            <Label Grid.Column="0" Grid.Row="6" FontSize="Small" FontAttributes="Italic">Highest Temerature:</Label>
+                <Label Grid.Column="1" Grid.Row="6" FontSize="Small" FontAttributes="None" x:Name="tempMax">{temperature}</Label>
+                    <Label Grid.Column="2" Grid.Row="6" FontSize="Small" FontAttributes="None" x:Name="tempMaxDate" HorizontalTextAlignment="End"
                            Margin="0,0,30,0">{timestampTempMax}</Label>
             
             
             
-            <Label Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="7" FontSize="Small" FontAttributes="Italic">Pressure:</Label>
-                <Label Grid.Column="5" Grid.ColumnSpan="2" Grid.Row="7" FontSize="Small" FontAttributes="None" x:Name="pressureField">{pressure}</Label>
-                    <Label Grid.Column="8" Grid.ColumnSpan="1" Grid.Row="7" Grid.RowSpan="2" FontSize="Small" FontAttributes="None"
+            <Label Grid.Column="0" Grid.Row="7" FontSize="Small" FontAttributes="Italic">Pressure:</Label>
+                <Label Grid.Column="1" Grid.Row="7" FontSize="Small" FontAttributes="None" x:Name="pressureField">{pressure}</Label>
+                    <Label Grid.Column="2" Grid.Row="7" FontSize="Small" FontAttributes="None"
                            x:Name="pressureTrend" HorizontalTextAlignment="End" Margin="0,0,30,0" VerticalTextAlignment="Center">{pressureTrend}</Label>
-            <Label Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="8" FontSize="Small" FontAttributes="Italic">Absolute Pressure:</Label>
-                <Label Grid.Column="5" Grid.ColumnSpan="2" Grid.Row="8" FontSize="Small" FontAttributes="None" x:Name="absolutePressureField">{absolute_pressure}</Label>
-            <Label Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="9" FontSize="Small" FontAttributes="Italic">CO2:</Label>
-                <Label Grid.Column="5" Grid.ColumnSpan="2" Grid.Row="9" FontSize="Small" FontAttributes="None" x:Name="co2Field">{co2}PPM</Label>
-            <Label Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="10" FontSize="Small" FontAttributes="Italic">Humidity:</Label>
-                <Label Grid.Column="5" Grid.ColumnSpan="2" Grid.Row="10" FontSize="Small" FontAttributes="None" x:Name="humidityField">{humidity}%</Label>
-            <Label Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="11" FontSize="Small" FontAttributes="Italic">Noise:</Label>
-                <Label Grid.Column="5" Grid.ColumnSpan="2" Grid.Row="11" FontSize="Small" FontAttributes="None" x:Name="noiseField">{noise}db</Label>
+            <Label Grid.Column="0" Grid.Row="8" FontSize="Small" FontAttributes="Italic">Absolute Pressure:</Label>
+                <Label Grid.Column="1" Grid.Row="8" FontSize="Small" FontAttributes="None" x:Name="absolutePressureField">{absolute_pressure}</Label>
+            <Label Grid.Column="0" Grid.Row="9" FontSize="Small" FontAttributes="Italic">CO2:</Label>
+                <Label Grid.Column="1" Grid.Row="9" FontSize="Small" FontAttributes="None" x:Name="co2Field">{co2}PPM</Label>
+            <Label Grid.Column="0" Grid.Row="10" FontSize="Small" FontAttributes="Italic">Humidity:</Label>
+                <Label Grid.Column="1" Grid.Row="10" FontSize="Small" FontAttributes="None" x:Name="humidityField">{humidity}%</Label>
+            <Label Grid.Column="0" Grid.Row="11" FontSize="Small" FontAttributes="Italic">Noise:</Label>
+                <Label Grid.Column="1" Grid.Row="11" FontSize="Small" FontAttributes="None" x:Name="noiseField">{noise}db</Label>
             
 
-            <Label Grid.Column="2" Grid.ColumnSpan="6" Grid.Row="13" FontSize="Medium" FontAttributes="Bold" x:Name="externalModulesLabel">External Module(s)</Label>
-            <ListView x:Name="LvModules" SeparatorVisibility="None" HasUnevenRows="True" Grid.Row="16" Grid.ColumnSpan="9" ItemSelected="LvModules_ItemSelected">
+            <Label Grid.Column="0" Grid.ColumnSpan="3" HorizontalTextAlignment="Center" Grid.Row="13" FontSize="Medium" FontAttributes="Bold" x:Name="externalModulesLabel">External Module(s)</Label>
+            <ListView x:Name="LvModules" SeparatorVisibility="None" HasUnevenRows="True" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="14" ItemSelected="LvModules_ItemSelected">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -76,7 +81,7 @@
                                 <StackLayout VerticalOptions="End" Margin="5">
                                     <Label Text="{Binding ModuleName}" FontSize="Large" TextColor="White"></Label>
                                     <Label Text="{Binding TranslatedType}" FontSize="Medium" TextColor="White"></Label>
-                                <!--<Label Text="{Binding Description}" FontSize="Small" TextColor="White"></Label>-->
+                                <Label Text="{Binding Description}" FontSize="Small" TextColor="White"></Label>
                                 </StackLayout>
 
                             </Grid>
@@ -85,5 +90,6 @@
                 </ListView.ItemTemplate>
             </ListView>
         </Grid>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
