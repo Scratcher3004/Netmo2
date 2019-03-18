@@ -16,17 +16,23 @@ namespace NetMo.Pages.Devices
 	{
         private Module module;
 
-        public WindGaugePage(Module indoorModule)
+        public WindGaugePage(Module windGauge)
         {
             InitializeComponent();
-            module = indoorModule;
+            module = windGauge;
 
-            moduleName.Text = indoorModule.ModuleName;
-            lastMessure.Text = "Last Measure: " + (TimestampToDateTime(indoorModule.LastMessage)).Minute.ToString() + " Minutes ago";
+            moduleName.Text = windGauge.ModuleName;
+            lastMessure.Text = "Last Measure: " + (TimestampToDateTime(windGauge.LastMessage)).Minute.ToString() + " Minutes ago";
 
-            /*rainField.Text = indoorModule.DashboardData.Rain + " mm";
-            sumH.Text = indoorModule.DashboardData.SumRainH + " mm";
-            sumD.Text = indoorModule.DashboardData.SumRainD + " mm";*/
+            windStrength.Text = windGauge.DashboardData.WindStrength.ToString() + " kph";
+            windAngle.Text = windGauge.DashboardData.WindAngle.ToString() + " °";
+
+            gustStrength.Text = windGauge.DashboardData.GustStrength.ToString() + " kph";
+            gustAngle.Text = windGauge.DashboardData.GustAngle.ToString() + " °";
+
+
+            windStrengthHist.Text = windGauge.DashboardData.WindHistoric.WindStrength.ToString() + " kph";
+            windAngleHist.Text = windGauge.DashboardData.WindHistoric.WindAngle.ToString() + " °";
         }
     }
 }
