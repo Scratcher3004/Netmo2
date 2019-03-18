@@ -66,14 +66,14 @@ namespace NetMo.Pages
 
             tempMin.Text = device.DashboardData.MinTemp.ToString() + " °C";
             DateTime dtMinTemp = TimestampToDateTime(device.DashboardData.DateMinTemp);
-            tempMinDate.Text = dtMinTemp.Month + "." + dtMinTemp.Day + "." + dtMinTemp.Year + "  " + dtMinTemp.Hour + ":" + dtMinTemp.Minute;
-
+            tempMinDate.Text = dtMinTemp.ToShortTimeString();// dtMinTemp.Month + "." + dtMinTemp.Day + "." + dtMinTemp.Year + "  " + dtMinTemp.Hour + ":" + dtMinTemp.Minute;
+            
             tempMax.Text = device.DashboardData.MaxTemp.ToString() + " °C";
             DateTime dtMaxTemp = TimestampToDateTime(device.DashboardData.DateMaxTemp);
-            tempMaxDate.Text =  dtMaxTemp.Month + "." + dtMaxTemp.Day + "." + dtMaxTemp.Year + "  " + dtMaxTemp.Hour + ":" + dtMaxTemp.Minute;
+            tempMaxDate.Text = dtMaxTemp.ToShortTimeString(); // + " - " + dtMaxTemp.ToLongTimeString();// dtMaxTemp.Month + "." + dtMaxTemp.Day + "." + dtMaxTemp.Year + "  " + dtMaxTemp.Hour + ":" + dtMaxTemp.Minute;
 
             pressureField.Text = device.DashboardData.Pressure.ToString() + " mBar";
-            pressureTrend.Text = Trend.GetTrend(device.DashboardData.PressureTrend);
+            pressureTrend.Source = Trend.GetTrend(device.DashboardData.PressureTrend);
             absolutePressureField.Text = device.DashboardData.AbsolutePressure.ToString() + " mBar";
 
             co2Field.Text = device.DashboardData.Co2.ToString() + " PPM";
